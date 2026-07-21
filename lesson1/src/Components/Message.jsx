@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Props from "./Props";
 
 function Message() {
   const [name, setName] = useState("");
@@ -23,14 +24,13 @@ function Message() {
         onChange={(event) => setName(event.target.value)}
       />
 
-      <button
-        className="btn btn-primary mt-3"
-        onClick={checkUser}
-      >
+      <button className="btn btn-primary mt-3" onClick={checkUser}>
         Check
       </button>
 
       <h3 className="mt-3">{message}</h3>
+
+      <Props user={name} />
     </div>
   );
 }
